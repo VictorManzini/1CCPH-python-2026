@@ -18,7 +18,7 @@ Salário líquido: {Salário_liquido:.2f} R$""")
 Salário_liquido = float(Salário_bruto) - float(desc)'''
 
 # Bloco abaixo é apenas uma variação do código onde eu coloco o valor sem o bônus para o usuario visualizar
-
+# Feito depois da correção, não foi feita na prova
 '''Salário_s_bonus = horas_trab * valor_hora
 
 print(f"""Colaborador(a): {colaborador}
