@@ -7,10 +7,9 @@ n4 = float(input("Digite a nota do quarto bimestre: "))
 media = (n1 + n2 + n3+ n4) / 4 
 print(f"A média do aluno é: {media:.2f}")
 
-if media >= 7: 
+if media >= 6: 
     print("Aluno aprovado!")
 elif media >= 5:
     print("Aluno em recuperação!")
 else: 
     print("Aluno reprovado...")
-    
