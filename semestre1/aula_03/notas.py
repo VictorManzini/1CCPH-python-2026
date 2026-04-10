@@ -1,4 +1,4 @@
-# Programa para calclar a média do aluno 
+# Programa para calclar a média do aluno - Exercício da aula 03
 n1 = float(input("Digite a nota do primeiro bimestre: "))
 n2 = float(input("Digite a nota do segundo bimestre: "))
 n3 = float(input("Digite a nota do terceiro brimestre: "))

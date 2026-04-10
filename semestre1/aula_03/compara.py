@@ -1,3 +1,5 @@
+# Programa de comparação de números aleatórios - execício da aula 03
+
 import random 
 
 def gerar_numero():

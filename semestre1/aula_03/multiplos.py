@@ -1,3 +1,5 @@
+# Programa para verificar se os números são múltiplos - exercício da aula 03
+
 print("Vamos verificar se os numeros são múltiplos")
 
 def multiplos(num1, num2):
