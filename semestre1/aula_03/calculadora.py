@@ -1,7 +1,7 @@
 # Calculadora - exercicio da aula 03 
-
+from time import sleep
 print("""
-      ------ CALCULADRA INICIADA ------
+      ------ CALCULADRA DO MANO MANZA® INICIADA ------
       """)
 
 instructions = input("Deseja ver as instruções do programa? (y/n) ")
@@ -36,6 +36,17 @@ while True:
     continuar = input("Deseja continuar (y/n)? ")
     if continuar.lower() == "n":
         print(""" 
-    ------ PROGRAMA ENCERRADO ------
+       ------ PROGRAMA ENCERRADO ------
               """)
+        sleep(0.7)
+        print(""" 
+
+OBRIGADO POR UTILIZAR A CALCULADORA DO MANO MANZA®
+
+""")
+        sleep(0.7)
+        print("""
+
+                ATÉ A PRÓXIMA
+""")
         break 
