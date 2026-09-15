@@ -12,5 +12,12 @@
     "email": "h@a.com",
     "stage": "novo",
     "created": "2026-09-08"
+  },
+  {
+    "name": "Victor",
+    "company": "RMCP",
+    "email": "victor@robertomanzini.com.br",
+    "stage": "None",
+    "created": "2026-09-15"
   }
 ]
