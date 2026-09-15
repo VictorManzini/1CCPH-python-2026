@@ -28,3 +28,19 @@ def create_lead(lead_dict):
     leads.append(lead_dict)
 
     DB_PATH.write_text(json.dumps(leads, ensure_ascii=False, indent=2), encoding="utf-8")
+
+def read_leads_search(query):
+    leads = read_leads() # retorna lista de leads
+    results = []
+
+    for i, lead in enumerate(leads):
+        txt_lead = f"{lead["name"]} {lead["company"]} {lead["email"]}".lower()
+        print(txt_lead)
+
+        if query in txt_lead:
+            results.append(lead)
+    if not results: 
+        print("Nada encontrado")
+        return
+    else:
+        return results
