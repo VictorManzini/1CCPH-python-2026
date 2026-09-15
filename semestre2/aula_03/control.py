@@ -41,6 +41,6 @@ def read_leads_search(query):
             results.append(lead)
     if not results: 
         print("Nada encontrado")
-        return
+        return []
     else:
         return results

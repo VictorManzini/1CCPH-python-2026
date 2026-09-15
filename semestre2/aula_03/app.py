@@ -39,7 +39,13 @@ def search_leads():
         return
     
     # Nesse momento, irei enviar minha busca para control
-    
+    # o control.read_leads_search() irá reetornar um array com os leads encontrados
+    leads_finded = control.read_leads_search(query)
+    print("\n# | Nome                 | Empresa           | E-mail")
+    for i, lead in enumerate(leads_finded):
+        print(f"{i:02d}| {lead["name"]:<20} | {lead["company"]:<17} | {lead["email"]:<20} ")
+    sleep(0.5)
+
 
 def export_leads():
     print("Export CSV...")
