@@ -46,6 +46,35 @@ def search_leads():
         print(f"{i:02d}| {lead["name"]:<20} | {lead["company"]:<17} | {lead["email"]:<20} ")
     sleep(0.5)
 
+def edit_lead():
+    leads = control.read_leads()
+    if not leads:
+        print("Nenhum lead ainda...")
+        return
+
+    list_leads()
+
+    try:
+        index = int(input("Digite o numero do lead que deseja alterar: "))
+    except ValueError: 
+        print("Digite um número válido")
+        return
+    print("O que deseja atualizar? ")
+    print("[1] Nome [2] Empresa [3] E-mail [4] Estágio")
+    escolha = input("Escolha: ").strip()
+
+    campos = {"1": "name", "2": "company", "3": "email", "4": "stage"}
+    if escolha not in campos.keys(): 
+        print("Opcao inválida...")
+        return
+
+    novo_valor = input("Digite o novo valor: ")
+
+    new_data = {index: novo_valor}
+    control.update_lead(campos[escolha], new_data)
+
+def remove_lead():
+    pass
 
 def export_leads():
     path_csv = control.export_csv()
@@ -63,7 +92,9 @@ def main():
         print("[1] Adicionar lead")
         print("[2] Listar leads")
         print("[3] Buscar (nome/e-mail/empresa)")
-        print("[4] Esxportar para CSV")
+        print("[4] Atualizar lead")
+        print("[5] Deletar lead")
+        print("[6] Esxportar para CSV")
         print("[0] Sair do programa")
 
         opt = input("Escolha uma ação: ").strip()
@@ -74,7 +105,9 @@ def main():
         elif opt == "3":
             search_leads()
         elif opt == "4":
-            export_leads()
+            edit_lead()
+        elif opt == "5":
+            pass
         elif opt == "0":
             print("Até mais")
             break

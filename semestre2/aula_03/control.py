@@ -46,6 +46,31 @@ def read_leads_search(query):
     else:
         return results
 
+def update_lead(index, new_data):
+    leads = read_leads()
+
+    if not(0<= index < len(leads)):
+        print("Índice inválido")
+        return False
+
+    leads[index].update(new_data) 
+    DB_PATH.write_text(json.dumps(leads, ensure_ascii=False, indent=2), encoding="utf-8")
+    return True
+
+
+def delete_lead(index):
+    leads = read_leads()
+
+    if not (0<= index < len(leads)):
+        print("Índice inválido")
+        return False
+
+    removido =  leads.pop(index)
+    print(f"Lead removido: {removido["name"]}")
+    DB_PATH.write_text(json.dumps(leads, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    return True
+
 def export_csv():
     """ Exporta os leads para um CSV e retorna o path de onde o arquivo foi salvo """
     path_csv = DATA_DIR / "leads.csv"
